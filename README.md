@@ -67,14 +67,3 @@ Robust to outliers
 
 ## Results: Unbalanced Data Accuracy: 84%
 ![Insert Unbalanced Data Image](https://github.com/deontaepharr/Multiclass_SVM_Thyroid_Classification/blob/master/misc/unbal.png?raw=true)
-
-## Conclusion:
-- SVMs can effectively classify the multiple classes of thyroid data with high accuracy when implementing the One-vs-Rest scheme.
-- However, a caveat lies in the fact that the data is unbalanced to the Euthyroid (negative) class, which the model effectively learns and distinguishes from the other classes.
-- When balancing the data, the model unfortunately produces an accuracy rate of ~60% due to the with data attributes being very close in similarity
-- So,  the 84% accuracy rate on unbalanced data doesn’t fairly show the efficiency of the SVM model. 
-## Future Work:
-- Gather more attributes that distinguishes each class
-- Explore different techniques to implement in the SVMs such as radial basis function kernel, Laplacian kernel, etc.
-- Compare the model results against probabilistic classification models such as Naive Bayes, Logistic Regression and Neural Networks.
-- Stratified Sampling Cross Validation Methods
