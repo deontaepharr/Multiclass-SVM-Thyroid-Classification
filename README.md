@@ -63,10 +63,10 @@ Robust to outliers
 - Essentially, it decomposes a multiclass classification problem into a multiple binary classification problems
 
 ## Results: Balanced Data Accuracy: 60%
-![Insert Balanced Data Image](https://raw.githubusercontent.com/deontaepharr/Multiclass_SVM_Thyroid_Classification/tree/master/misc/bal.png)
+![Insert Balanced Data Image](https://github.com/deontaepharr/Multiclass_SVM_Thyroid_Classification/blob/master/misc/bal.png?raw=true)
 
 ## Results: Unbalanced Data Accuracy: 84%
-![Insert Unbalanced Data Image](https://raw.githubusercontent.com/deontaepharr/Multiclass_SVM_Thyroid_Classification/tree/master/misc/unbal.png)
+![Insert Unbalanced Data Image](https://github.com/deontaepharr/Multiclass_SVM_Thyroid_Classification/blob/master/misc/unbal.png?raw=true)
 
 ## Conclusion:
 - SVMs can effectively classify the multiple classes of thyroid data with high accuracy when implementing the One-vs-Rest scheme.
