@@ -67,3 +67,4 @@ Robust to outliers
 
 ## Results: Unbalanced Data Accuracy: 84%
 ![Insert Unbalanced Data Image](https://github.com/deontaepharr/Multiclass_SVM_Thyroid_Classification/blob/master/misc/unbal.png?raw=true)
+* Caveat: Though the accuracy is 84%, it doesn't fairly depict the efficiency of the model. Since there's a larger amount of Euthyroid (negative) data, the model will correctly classify those and improve its accuracy score. But, even though it'll incorrectly classify a significant amount of non-Euthyroid data, since they are a small minority, the accuracy rate isn't greatly affected.
