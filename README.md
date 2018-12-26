@@ -8,6 +8,34 @@ For my Fall 2018 Data Mining course, I utilized a Support Vector Machine model f
 
 __**This README is a text version of the presentation I gave at the end of the semester.**__
 
+
+## Required Packages
+
+[Pandas](https://pandas.pydata.org/): Powerful data structures for data analysis, time series, and statistics 
+```bash
+pip install pandas
+```
+
+[Numpy](https://www.numpy.org/): a general-purpose array-processing package designed to efficiently manipulate large multi-dimensional arrays  
+```bash
+pip install numpy
+```
+
+[Scikit-Learn](https://scikit-learn.org/stable/index.html): Simple and efficient tools for data mining and data analysis  
+```bash
+pip install scikit-learn
+```
+
+[Seaborn](https://scikit-learn.org/stable/index.html): A library for making statistical graphics in Python  
+```bash
+pip install seaborn
+```
+
+[Matplotlib](https://matplotlib.org/): Python plotting package
+```bash
+pip install matplotlib
+```
+
 ## Motivation
 - In the U.S. alone, an estimated 27 million Americans have Thyroid disease
 - More than half of this population are undiagnosed or misdiagnosed 

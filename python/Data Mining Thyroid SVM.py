@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import itertools
 
 import pandas as pd
@@ -22,20 +16,13 @@ import matplotlib.pyplot as plt
 
 # # Load Data
 # ----
-
-# In[ ]:
-
-
 def get_data(balanced=False):
     if balanced:
         return pd.read_csv("thyroid_balanced.csv",index_col=False)
     else:
         return pd.read_csv("thyroid_unbalanced.csv",index_col=False)
 
-
-# In[ ]:
-
-
+    
 def plot_classification_report(y_tru, y_prd, figsize=(10, 10), ax=None):
 
     plt.figure(figsize=figsize)
@@ -57,9 +44,6 @@ def plot_classification_report(y_tru, y_prd, figsize=(10, 10), ax=None):
                 xticklabels=xticks, 
                 yticklabels=yticks,
                 ax=ax)
-
-
-# In[ ]:
 
 
 def plot_confusion_matrix(cm, classes,
@@ -100,32 +84,32 @@ def plot_confusion_matrix(cm, classes,
 # # Prepare Data For Model
 # ------
 
-# In[ ]:
+
 
 
 thyroid_data = get_data(balanced=True)
 
 
-# In[ ]:
+
 
 
 targets = thyroid_data['Category'].unique()
 
 
-# In[ ]:
+
 
 
 X = thyroid_data.drop("Category", axis=1)
 y = thyroid_data["Category"]
 
 
-# In[ ]:
+
 
 
 kf = StratifiedKFold(n_splits=3)
 
 
-# In[ ]:
+
 
 
 for train_index, test_index in kf.split(X, y):
@@ -136,38 +120,38 @@ for train_index, test_index in kf.split(X, y):
 # # Multiclass Classification with Support Vector Machines
 # -------
 
-# In[ ]:
+
 
 
 svm_model = LinearSVC()
 
 
-# In[ ]:
+
 
 
 svm_model.fit(X_train,y_train)
 
 
-# In[ ]:
+
 
 
 y_pred = svm_model.predict(X_test)
 
 
-# In[ ]:
+
 
 
 print("Accuracy:\n", metrics.accuracy_score(y_test,y_pred))
 print("Confusion Matrix:\n",metrics.confusion_matrix(y_test, y_pred))
 
 
-# In[ ]:
+
 
 
 unique, counts = np.unique(y_test, return_counts=True)
 
 
-# In[ ]:
+
 
 
 # Compute confusion matrix
@@ -179,7 +163,7 @@ plt.figure(figsize=(12,6))
 plot_confusion_matrix(cnf_matrix, classes=['hyperthyroid','hypothyroid', 'negative', 'sick'])
 
 
-# In[ ]:
+
 
 
 precision, recall, fscore, support = score(y_test, y_pred)
@@ -190,7 +174,7 @@ print('fscore: {}'.format(fscore))
 print('support: {}'.format(support))
 
 
-# In[ ]:
+
 
 
 plot_classification_report(y_test, y_pred)
