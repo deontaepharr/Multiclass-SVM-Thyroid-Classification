@@ -1,8 +1,17 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
 import pandas as pd
 
 
 # # Load Data
 # ----
+
+# In[ ]:
+
 
 columns = ["Age", "Sex", "On Thyroxine", "Query on Thyroxine", 
            "On Antithyroid Medication", "Sick", "Pregnant", 
@@ -13,9 +22,15 @@ columns = ["Age", "Sex", "On Thyroxine", "Query on Thyroxine",
            "FTI Measured", "FTI", "TBG Measured", "TBG", "Referral Source", "Category"]
 
 
-hyper_data = pd.read_csv("/Users/deontaepharr/Documents/GitHub/multiclass_svm_thyroid_classification/datasets/allhyper.csv", names=columns)
-hypo_data = pd.read_csv("/Users/deontaepharr/Documents/GitHub/multiclass_svm_thyroid_classification/datasets/allhypo.csv", names=columns)
-sick_data = pd.read_csv("/Users/deontaepharr/Documents/GitHub/multiclass_svm_thyroid_classification/datasets/sick.csv", names=columns)
+# In[ ]:
+
+
+hyper_data = pd.read_csv("allhyper.csv", names=columns)
+hypo_data = pd.read_csv("allhypo.csv", names=columns)
+sick_data = pd.read_csv("sick.csv", names=columns)
+
+
+# In[ ]:
 
 
 def parse_row(row):
@@ -26,8 +41,13 @@ def parse_row(row):
 # # Hyperthyroid Data
 # ---
 
+# In[ ]:
+
 
 hyper_data['Category'] = hyper_data['Category'].apply(parse_row)
+
+
+# In[ ]:
 
 
 def to_hyperthyroid(row):
@@ -36,9 +56,20 @@ def to_hyperthyroid(row):
     return row
 
 
+# In[ ]:
+
+
 hyper_data['Category'] = hyper_data['Category'].apply(to_hyperthyroid)
 
+
+# In[ ]:
+
+
 hyper_data['Category'].value_counts()
+
+
+# In[ ]:
+
 
 hyper_data.head()
 
@@ -46,13 +77,13 @@ hyper_data.head()
 # # Hypothyroid Data
 # ---
 
-
+# In[ ]:
 
 
 hypo_data['Category'] = hypo_data['Category'].apply(parse_row)
 
 
-
+# In[ ]:
 
 
 def to_hypothyroid(row):
@@ -61,19 +92,19 @@ def to_hypothyroid(row):
     return row
 
 
-
+# In[ ]:
 
 
 hypo_data['Category'] = hypo_data['Category'].apply(to_hypothyroid)
 
 
-
+# In[ ]:
 
 
 hypo_data['Category'].value_counts()
 
 
-
+# In[ ]:
 
 
 hypo_data.head()
@@ -82,19 +113,19 @@ hypo_data.head()
 # # Sick Thyroid Data
 # ---
 
-
+# In[ ]:
 
 
 sick_data['Category'] = sick_data['Category'].apply(parse_row)
 
 
-
+# In[ ]:
 
 
 sick_data['Category'].value_counts()
 
 
-
+# In[ ]:
 
 
 sick_data.head()
@@ -103,31 +134,31 @@ sick_data.head()
 # # Combined Thyroid Data
 # ---
 
-
+# In[ ]:
 
 
 thyroid_frames = [hyper_data, hypo_data, sick_data]
 
 
-
+# In[ ]:
 
 
 thyroid_data = pd.concat(thyroid_frames).drop_duplicates()
 
 
-
+# In[ ]:
 
 
 thyroid_data = thyroid_data.drop('Referral Source', axis=1)
 
 
-
+# In[ ]:
 
 
 thyroid_data["Category"].value_counts()
 
 
-
+# In[ ]:
 
 
 thyroid_data.columns
@@ -136,7 +167,7 @@ thyroid_data.columns
 # # Missing Data Preprocessing
 # ----
 
-
+# In[ ]:
 
 
 def find_missing_columns(dataframe, print_cols = False):
@@ -157,13 +188,13 @@ def find_missing_columns(dataframe, print_cols = False):
     return missing_data_columns
 
 
-
+# In[ ]:
 
 
 find_missing_columns(thyroid_data)
 
 
-
+# In[ ]:
 
 
 '''
@@ -175,7 +206,7 @@ thyroid_data = thyroid_data.drop('TBG', axis=1)
 thyroid_data = thyroid_data.drop("TBG Measured", axis=1)
 
 
-
+# In[ ]:
 
 
 thyroid_data.head()
@@ -184,7 +215,7 @@ thyroid_data.head()
 # # Missing Data Preprocessing 
 # - Identify missing and abnormal data
 
-
+# In[ ]:
 
 
 def fill_missing_data(dataframe, category_label):
@@ -195,7 +226,7 @@ def fill_missing_data(dataframe, category_label):
     dataframe.loc[condition, category_label] = cat_val
 
 
-
+# In[ ]:
 
 
 def print_column(dataframe, column):
@@ -205,7 +236,7 @@ def print_column(dataframe, column):
 
 # ## Age
 
-
+# In[ ]:
 
 
 thyroid_data.loc[thyroid_data['Age'] == '455', 'Age'] = '45'
@@ -215,7 +246,7 @@ fill_missing_data(thyroid_data, 'Age')
 
 # ## TSH
 
-
+# In[ ]:
 
 
 fill_missing_data(thyroid_data, 'TSH')
@@ -224,7 +255,7 @@ fill_missing_data(thyroid_data, 'TSH')
 
 # ## T3
 
-
+# In[ ]:
 
 
 fill_missing_data(thyroid_data, 'T3')
@@ -233,7 +264,7 @@ fill_missing_data(thyroid_data, 'T3')
 
 # ## TT4
 
-
+# In[ ]:
 
 
 fill_missing_data(thyroid_data, 'TT4')
@@ -242,7 +273,7 @@ fill_missing_data(thyroid_data, 'TT4')
 
 # ## T4U
 
-
+# In[ ]:
 
 
 fill_missing_data(thyroid_data, 'T4U')
@@ -251,7 +282,7 @@ fill_missing_data(thyroid_data, 'T4U')
 
 # ## FTI
 
-
+# In[ ]:
 
 
 fill_missing_data(thyroid_data, 'FTI')
@@ -260,13 +291,13 @@ fill_missing_data(thyroid_data, 'FTI')
 
 # ## Sex
 
-
+# In[ ]:
 
 
 thyroid_data = thyroid_data[thyroid_data['Sex'] != '?']
 
 
-
+# In[ ]:
 
 
 # Last check to ensure no missing data
@@ -276,7 +307,7 @@ find_missing_columns(thyroid_data)
 # # Separate Columns for Further Processing
 # ------
 
-
+# In[ ]:
 
 
 def separate_columns(dataframe):
@@ -295,7 +326,7 @@ def separate_columns(dataframe):
     return continuous,categorical
 
 
-
+# In[ ]:
 
 
 continuous_cols, categorical_cols = separate_columns(thyroid_data)
@@ -304,7 +335,7 @@ continuous_cols, categorical_cols = separate_columns(thyroid_data)
 # # Scale Continuous Data
 # -----
 
-
+# In[ ]:
 
 
 def normalize_column(dataframe, column):
@@ -313,7 +344,7 @@ def normalize_column(dataframe, column):
                         (dataframe[column].max()-dataframe[column].min()))
 
 
-
+# In[ ]:
 
 
 for col in continuous_cols:
@@ -323,7 +354,7 @@ for col in continuous_cols:
 # # Binarize Categorical Data
 # -----
 
-
+# In[ ]:
 
 
 # Binarize Sex column
@@ -334,7 +365,7 @@ thyroid_data.loc[conditionF, 'Sex'] = 0
 thyroid_data.loc[conditionM, 'Sex'] = 1
 
 
-
+# In[ ]:
 
 
 def convert_category(dataframe, column):
@@ -345,7 +376,7 @@ def convert_category(dataframe, column):
     dataframe.loc[conditionT, column] = 1
 
 
-
+# In[ ]:
 
 
 # Binarize T/F columns
@@ -356,7 +387,7 @@ for col in categorical_cols:
 # # Balance Categorical Data
 # -------
 
-
+# In[ ]:
 
 
 def dataset_to_sample(dataset, sample=True):
@@ -374,19 +405,19 @@ def dataset_to_sample(dataset, sample=True):
 
 # ### Balanced Data
 
-
+# In[ ]:
 
 
 thyroid_data_balanced = dataset_to_sample(thyroid_data, sample=True)
 
 
-
+# In[ ]:
 
 
 thyroid_data_balanced["Category"].value_counts()
 
 
-
+# In[ ]:
 
 
 thyroid_data_balanced.to_csv("thyroid_balanced.csv", index=False)
@@ -394,19 +425,19 @@ thyroid_data_balanced.to_csv("thyroid_balanced.csv", index=False)
 
 # ### Unbalanced Data
 
-
+# In[ ]:
 
 
 thyroid_data_unbalanced = dataset_to_sample(thyroid_data, sample=False)
 
 
-
+# In[ ]:
 
 
 thyroid_data_unbalanced["Category"].value_counts()
 
 
-
+# In[ ]:
 
 
 thyroid_data_unbalanced.to_csv("thyroid_unbalanced.csv", index=False)
