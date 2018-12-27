@@ -90,7 +90,7 @@ Robust to outliers
 - Strategy involves training a single classifier per class, with the samples of that class as positive samples and all other samples as negatives. 
 - Essentially, it decomposes a multiclass classification problem into a multiple binary classification problems
 
-## Results: Balanced Data Accuracy: 60%
+## Results: Balanced Data Accuracy: 68%
 ![Insert Balanced Data Image](https://github.com/deontaepharr/Multiclass_SVM_Thyroid_Classification/blob/master/misc/bal.png?raw=true)
 
 ## Results: Unbalanced Data Accuracy: 84%
