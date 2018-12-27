@@ -10,6 +10,7 @@ __**This README is a text version of the presentation I gave at the end of the s
 
 
 ## Required Packages
+Python Version: 3.6.5
 
 [Pandas](https://pandas.pydata.org/): Powerful data structures for data analysis, time series, and statistics 
 ```bash
