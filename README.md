@@ -1,6 +1,5 @@
-# Data Mining Course Project
-
-For my Fall 2018 Data Mining course, I utilized a Support Vector Machine model for a multi-class classification problem dealing with thyroid data. Specifically, the SVM is used to distinguish between 4 different thyroid states: 
+# Multi-Class SVMs for Classifying Thyroid Diseases
+I utilized a Support Vector Machine model for a multi-class classification problem dealing with thyroid data. Specifically, the SVM is used to distinguish between 4 different thyroid states: 
 - Hyperthyroid
 - Hypothyroid
 - Euthyroid-sick
