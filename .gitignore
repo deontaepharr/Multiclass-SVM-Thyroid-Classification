@@ -1,4 +1,4 @@
 
-jupyter/.ipynb_checkpoints/Data Mining Thyroid Preprocessing-checkpoint.ipynb
-jupyter/.ipynb_checkpoints/Data Mining Thyroid SVM-checkpoint.ipynb
 .DS_Store
+.ipynb_checkpoints
+*.ipynb_checkpoint*
