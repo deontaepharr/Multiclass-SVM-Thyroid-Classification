@@ -90,9 +90,4 @@ Robust to outliers
 - Strategy involves training a single classifier per class, with the samples of that class as positive samples and all other samples as negatives. 
 - Essentially, it decomposes a multiclass classification problem into a multiple binary classification problems
 
-## Results: Balanced Data Accuracy: 68%
-![Insert Balanced Data Image](https://github.com/deontaepharr/Multiclass_SVM_Thyroid_Classification/blob/master/misc/bal.png?raw=true)
-
-## Results: Unbalanced Data Accuracy: 84%
-![Insert Unbalanced Data Image](https://github.com/deontaepharr/Multiclass_SVM_Thyroid_Classification/blob/master/misc/unbal.png?raw=true)
-* Caveat: Though the accuracy is 84%, it doesn't fairly depict the efficiency of the model. Since there's a larger amount of Euthyroid (negative) data, the model will correctly classify those and improve its accuracy score. But, even though it'll incorrectly classify a significant amount of non-Euthyroid data, since they are a small minority, the accuracy rate isn't greatly affected.
+## Results:
