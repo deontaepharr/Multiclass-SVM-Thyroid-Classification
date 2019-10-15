@@ -1,40 +1,13 @@
 # Multi-Class SVMs for Classifying Thyroid Diseases
-I utilized a Support Vector Machine model for a multi-class classification problem dealing with thyroid data. Specifically, the SVM is used to distinguish between 4 different thyroid states: 
-- Hyperthyroid
-- Hypothyroid
-- Euthyroid-sick
-- Euthyroid (negative)
+Implemented a Support Vector Machine model for diagnosing thyroid disease. 
+- Specifically, the SVM is used to distinguish between 4 different thyroid states: 
+    - Hyperthyroid
+    - Hypothyroid
+    - Euthyroid-sick
+    - Euthyroid (negative)
 
-__**This README is a text version of the presentation I gave at the end of the semester.**__
 
 
-## Required Packages
-Python Version: 3.6.5
-
-[Pandas](https://pandas.pydata.org/): Powerful data structures for data analysis, time series, and statistics 
-```bash
-pip install pandas
-```
-
-[Numpy](https://www.numpy.org/): a general-purpose array-processing package designed to efficiently manipulate large multi-dimensional arrays  
-```bash
-pip install numpy
-```
-
-[Scikit-Learn](https://scikit-learn.org/stable/index.html): Simple and efficient tools for data mining and data analysis  
-```bash
-pip install scikit-learn
-```
-
-[Seaborn](https://scikit-learn.org/stable/index.html): A library for making statistical graphics in Python  
-```bash
-pip install seaborn
-```
-
-[Matplotlib](https://matplotlib.org/): Python plotting package
-```bash
-pip install matplotlib
-```
 
 ## Motivation
 - In the U.S. alone, an estimated 27 million Americans have Thyroid disease
@@ -91,3 +64,33 @@ Robust to outliers
 - Essentially, it decomposes a multiclass classification problem into a multiple binary classification problems
 
 ## Results:
+- Obtained an accuracy of about 69%
+- For further details on the entire process, visit the [notebook here](https://github.com/deontaepharr/Multiclass-SVM-Thyroid-Classification/blob/master/Notebooks/Classification%20of%20Thyroid%20Disorders%20Using%20Support%20Vector%20Machines.ipynb)
+
+## Required Packages
+Python Version: 3.6.5
+
+[Pandas](https://pandas.pydata.org/): Powerful data structures for data analysis, time series, and statistics 
+```bash
+pip install pandas
+```
+
+[Numpy](https://www.numpy.org/): a general-purpose array-processing package designed to efficiently manipulate large multi-dimensional arrays  
+```bash
+pip install numpy
+```
+
+[Scikit-Learn](https://scikit-learn.org/stable/index.html): Simple and efficient tools for data mining and data analysis  
+```bash
+pip install scikit-learn
+```
+
+[Seaborn](https://scikit-learn.org/stable/index.html): A library for making statistical graphics in Python  
+```bash
+pip install seaborn
+```
+
+[Matplotlib](https://matplotlib.org/): Python plotting package
+```bash
+pip install matplotlib
+```
