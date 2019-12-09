@@ -50,6 +50,8 @@ Robust to outliers
 - Balanced data: leaned heavily towards the negative samples
 - Once found, able to train model
 
+Data can be found here: https://archive.ics.uci.edu/ml/datasets/thyroid+disease
+
 ## Support Vector Machines
 - A geometric approach to classification and regression tasks
 - Main Objective: to find a hyperplane that distinctly classifies the data points.
